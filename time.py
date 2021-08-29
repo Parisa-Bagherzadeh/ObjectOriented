@@ -9,12 +9,12 @@ class Time:
         self.hour=self.sec//3600
         self.min=self.sec//60
         self.sec=self.sec%60
-        #if(self.sec>59):
-            #self.min+=self.sec//60
-            #self.sec=self.sec%60
-        #if(self.min>60):
-            #self.hour+=self.min//60 
-            #self.min=self.min%60
+        if(self.sec>59):
+            self.min+=self.sec//60
+            self.sec=self.sec%60
+        if(self.min>59):
+            self.hour+=self.min//60 
+            self.min=self.min%60
         
         return self.sec,self.min,self.hour
             
@@ -32,7 +32,7 @@ class Time:
         if(result.sec>59):
             result.min+=result.sec//60
             result.sec=result.sec%60
-        if(result.min>60):
+        if(result.min>59):
             result.hour+=result.min//60 
             result.min=result.min%60
         return result
